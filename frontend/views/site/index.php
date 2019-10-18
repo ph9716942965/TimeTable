@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Billing Application';
+$this->title = 'Time Slot Managment Application';
 ?>
 <div class="site-index">
 

@@ -39,6 +39,6 @@ use dmstr\widgets\Alert;
     <div class="pull-right hidden-xs">
         <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2018-2019 <a href="#">Billing Application</a>.</strong> All rights
+    <strong>Copyright &copy; 2018-2019 <a href="#">TimeSlot Managment Application</a>.</strong> All rights
     reserved.
 </footer>

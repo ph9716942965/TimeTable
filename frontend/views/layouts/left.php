@@ -36,10 +36,22 @@
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Supplier', 'icon' => 'file-code-o', 'url' => ['/supplier'],],
-                            ['label' => 'HSN Code TAX', 'icon' => 'dashboard', 'url' => ['/tax-rules'],],
-                            ['label' => 'Products', 'icon' => 'dashboard', 'url' => ['/products'],],
-                            ['label' => 'Customer', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                            ['label' => 'Times Slot', 'icon' => 'file-code-o', 'url' => ['/debug'],],
+                            ['label' => 'Open Days', 'icon' => 'dashboard', 'url' => ['/day'],],
+                            ['label' => 'Holiday Dates', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                            [
+                                'label' => 'Holiday',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => 'Yearly Rule', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => 'Monthly Rule', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => 'Weekly Rule', 'icon' => 'circle-o', 'url' => '#',],
+                                ],
+                            ],
+                           // ['label' => 'Holiday Yearly', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                           // ['label' => 'Holiday Monthly', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                           // ['label' => 'Holiday Weeks', 'icon' => 'dashboard', 'url' => ['/debug'],],
                         ]
                     ],
                     [
