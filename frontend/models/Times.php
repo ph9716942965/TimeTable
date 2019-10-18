@@ -24,7 +24,7 @@ class Times extends \yii\db\ActiveRecord
     }
 
     const START = '06:00:00';
-    const END   = '08:00:00';
+    const END   = '20:00:00';
 
     /**
      * {@inheritdoc}
@@ -42,14 +42,14 @@ class Times extends \yii\db\ActiveRecord
 
     public function validTime() {
         if (strtotime(Times::START) >  strtotime($this->time_from)) {
-            $this->addError('time_from', 'From Time is not valid.');
+            $this->addError('time_from', 'GolfCourse Are not open at this time');
+        } if (strtotime(Times::END) <  strtotime($this->time_to)) {
+            $this->addError('time_to', 'GolfCourse Are Closed at this time');
         }
     }
 
     public function compareDates() {
-        $time_from = strtotime($this->time_from);
-        $time_to = strtotime($this->time_to);
-        if (!$this->hasErrors() && $time_to <= $time_from) {
+        if (!$this->hasErrors() && strtotime($this->time_to) <= strtotime($this->time_from)) {
             $this->addError('time_to', 'End Time is not valid.');
         }
     }
