@@ -1,7 +1,7 @@
 <?php
 
 namespace frontend\models;
-
+use yii\behaviors\AttributeBehavior;
 use Yii;
 
 /**
@@ -29,6 +29,22 @@ class HolidayDate extends \yii\db\ActiveRecord
             [['date'], 'required'],
             [['date'], 'safe'],
         ];
+    }
+
+    public function afterFind() {
+        parent::afterFind ();
+       // $this->date=Yii::$app->formatter->asDate($this->date);
+    }
+
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->date=Yii::$app->formatter->asDate($this->date, 'php:Y-m-d');
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

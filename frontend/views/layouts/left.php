@@ -36,9 +36,9 @@
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Times Slot', 'icon' => 'file-code-o', 'url' => ['/debug'],],
+                            ['label' => 'Times Slot', 'icon' => 'file-code-o', 'url' => ['/times'],],
                             ['label' => 'Open Days', 'icon' => 'dashboard', 'url' => ['/day'],],
-                            ['label' => 'Holiday Dates', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                            ['label' => 'Holiday Dates', 'icon' => 'dashboard', 'url' => ['/holiday-date'],],
                             [
                                 'label' => 'Holiday',
                                 'icon' => 'circle-o',

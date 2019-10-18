@@ -46,6 +46,16 @@ class Times extends \yii\db\ActiveRecord
         ];
     }
 
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->time_from=Yii::$app->formatter->asDate($this->time_from, 'php:H:i:s');
+            $this->time_to=Yii::$app->formatter->asDate($this->time_to, 'php:H:i:s');
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * @return \yii\db\ActiveQuery
      */
