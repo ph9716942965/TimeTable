@@ -23,6 +23,9 @@ class Times extends \yii\db\ActiveRecord
         return 'times';
     }
 
+    const START = '06:00:00';
+    const END   = '08:00:00';
+
     /**
      * {@inheritdoc}
      */
@@ -31,8 +34,28 @@ class Times extends \yii\db\ActiveRecord
         return [
             [['time_from', 'time_to'], 'required'],
             [['time_from', 'time_to'], 'safe'],
+            ['time_from', 'validTime'],
+            ['time_to', 'compareDates'],
         ];
+        
     }
+
+    public function validTime() {
+        if (strtotime(Times::START) >  strtotime($this->time_from)) {
+            $this->addError('time_from', 'From Time is not valid.');
+        }
+    }
+
+    public function compareDates() {
+        $time_from = strtotime($this->time_from);
+        $time_to = strtotime($this->time_to);
+        if (!$this->hasErrors() && $time_to <= $time_from) {
+            $this->addError('time_to', 'End Time is not valid.');
+        }
+    }
+
+
+
 
     /**
      * {@inheritdoc}
